@@ -1,0 +1,25 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+*.pyc
+*.pyo
+*.dll
+*.exe
+*.pdb
+*.cache
+
+simulation/simotion FMU/DriveSim_Designer_CODE_v2202/

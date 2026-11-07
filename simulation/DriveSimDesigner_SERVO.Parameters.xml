@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Editable default values for the "parameter" (causality=parameter) variables of DriveSimDesigner_SERVO.fmu. Load with FmuParameterSet.Load and apply with ApplyTo between EnterInitializationMode/ExitInitializationMode. -->
+<FmuParameters model="DriveSimDesigner_SERVO">
+
+  <Parameter name="Config.ExternalLoad" valueReference="48" value="0" description="1 .. external application, 0 .. internal feedback loop" />
+  <Parameter name="Config.SetpointChannel" valueReference="49" value="0" description="0 .. ramp function generator is active, 0 .. ramp function generator is stubbed" />
+  <Parameter name="Config.SequenceControl" valueReference="50" value="1" description="1 .. sequence controller is active, 0 .. sequence controller is stubbed" />
+  <Parameter name="Config.SpeedController" valueReference="51" value="1" description="0 .. speed contoller is stubbed, 1 .. speed contoller is active" />
+  <Parameter name="Config.CurrentSetpointFilterPar" valueReference="52" value="1" description="0 .. parameters for general order filter (Var), 1 .. SINAMICS parameters (Param)" />
+  <Parameter name="Config.SupplyMode" valueReference="53" value="0" description="0 .. not relevant, 1 .. external, 2 .. internal" />
+  <Parameter name="Config.Tuning" valueReference="54" value="1" description="0 .. tuning off, 1 .. tuning enabled, p1460, p1462, p1433, p1434, p1435, CurrentSetPointFilter1" />
+  
+  <Parameter name="Param.Motor.p0341_Mot_m_inert" valueReference="55" unit="kgm^2" value="0.05" description="Motor moment of inertia" />
+  <Parameter name="Param.Motor.p0342_Mot_m_inert_ratio" valueReference="56" value="1" description="Ratio between the total and motor moment of inertia" />
+  
+  <Parameter name="Param.Commissioning.p0112_t_samp_for_p0115" valueReference="57" value="3" description="Sampling times pre-setting p0115" />
+  
+  <Parameter name="Param.EncoderEvaluation.p0400_0_Enc_type_sel" valueReference="58" value="224" description="Encoder 1 type selection" />
+  <Parameter name="Param.EncoderEvaluation.p0400_1_Enc_type_sel" valueReference="59" value="0" description="Encoder 2 type selection" />
+  <Parameter name="Param.EncoderEvaluation.p0418_0_Enc_fine_Gx_XIST1" valueReference="60" value="11" description="Fine resolution G1_XIST (in bits)" />
+  <Parameter name="Param.EncoderEvaluation.p0418_1_Enc_fine_Gx_XIST1" valueReference="61" value="11" description="Fine resolution G2_XIST (in bits)" />
+  <Parameter name="Param.EncoderEvaluation.p0419_0_Enc_fine_Gx_XIST2" valueReference="62" value="0" description="Fine resolution absolute value Gx_XIST2 (in bits)" />
+  <Parameter name="Param.EncoderEvaluation.p0419_1_Enc_fine_Gx_XIST2" valueReference="63" value="9" description="Fine resolution absolute value Gx_XIST2 (in bits)" />
+  
+  <Parameter name="Param.PROFIdrive.p0922_IF1_PZD_tel" valueReference="64" value="105" description="IF1 PROFIdrive PZD telegram selection" />
+  <Parameter name="Param.PROFIdrive.p8864_IF1_Pd_1_sup_tel" valueReference="65" value="0" description="IF1 PROFIdrive first supplementary telegram selection" />
+  
+  <Parameter name="Param.SetpointChannel.p1082_n_max" valueReference="66" unit="1/min" value="7300" description="Maximum speed" />
+  <Parameter name="Param.SetpointChannel.p1120_RFG_ramp_up_time" valueReference="67" unit="s" value="10" description="Ramp-function generator ramp-up time" />
+  <Parameter name="Param.SetpointChannel.p1121_RFG_ramp_down_time" valueReference="68" unit="s" value="10" description="Ramp-function generator ramp-down time" />
+  <Parameter name="Param.SetpointChannel.p1135_OFF3_t_RD" valueReference="69" unit="s" value="0" description="OFF3 ramp-down time" />
+  <Parameter name="Param.SetpointChannel.p1148_RFG_tol_HL_RL_act" valueReference="70" unit="1/min" value="19.8" description="Ramp-function gen. tolerance for ramp-up and ramp-down active" />
+  <Parameter name="Param.Functions.p1215_Brake_config" valueReference="71" value="0" description="Motor holding brake configuration" />
+  <Parameter name="Param.Functions.p1226_n_standst_n_thr" valueReference="72" unit="1/min" value="20" description="Standstill detection speed threshold" />
+  <Parameter name="Param.Functions.p1227_n_standst_t_mon" valueReference="73" unit="s" value="4" description="Zero speed detection monitoring time" />
+  <Parameter name="Param.Functions.p1228_Pulse_suppr_t_del" valueReference="74" unit="s" value="0" description="Pulse suppression delay time" />
+  
+  <Parameter name="Param.ClosedLoopControl.p1402_I_ctrl_config" valueReference="75" value="0" description="Bit 4: 16 - Closed-loop current control and motor model configuration" />
+  
+  <Parameter name="Param.ClosedLoopControl.p1433_n_ctrl_RefMod_fn" valueReference="76" unit="Hz" value="0" description="Speed controller reference model natural frequency" />
+  <Parameter name="Param.ClosedLoopControl.p1434_n_ctrl_RefMod_D" valueReference="77" value="1" description="Speed controller reference model damping" />
+  <Parameter name="Param.ClosedLoopControl.p1435_n_ctrRefMod_t_dead" valueReference="78" value="0" description="Speed controller reference model dead time" />
+  <Parameter name="Param.ClosedLoopControl.p1460_n_ctrl_Kp_n_lower" valueReference="79" unit="Nms/rad" value="0.3" description="Speed controller P gain adaptation speed lower" />
+  <Parameter name="Param.ClosedLoopControl.p1462_n_ctrl_Tn_n_lower" valueReference="80" unit="ms" value="20" description="Speed contr. integral act. time adaptation speed lower" />
+  
+  <Parameter name="Param.ClosedLoopControl.p1497_CI_M_inert_scal_s_s" valueReference="81" unit="%" value="100" description="Moment of inertia scaling signal source" />
+  <Parameter name="Param.ClosedLoopControl.p1498_Load_m_inert" valueReference="82" unit="kgm^2" value="0" description="Load moment of inertia" />
+  
+  <Parameter name="Param.ClosedLoopControl.p1520_M_max_upper_mot" valueReference="83" unit="Nm" value="4.6" description="Torque limit upper" />
+  <Parameter name="Param.ClosedLoopControl.p1521_M_max_lower_reg" valueReference="84" unit="Nm" value="-4.6" description="Torque limit lower" />
+  <Parameter name="Param.ClosedLoopControl.p1530_P_max_mot" valueReference="85" unit="kW" value="3" description="Power limit motoring" />
+  <Parameter name="Param.ClosedLoopControl.p1531_P_max_reg" valueReference="86" unit="kW" value="-3" description="Power limit regenerative" />
+  
+  <Parameter name="Param.ClosedLoopControl_Filter.p1656_I_set_filt_act" valueReference="87" value="0" description="Activates current setpoint filter" />
+  <Parameter name="Param.ClosedLoopControl_Filter.p1658_I_set_filt_1_fn_den" valueReference="88" unit="Hz" value="1999" description="Current setpoint filter 1 denominator natural frequency" />
+  <Parameter name="Param.ClosedLoopControl_Filter.p1659_I_set_filt_1_D_den" valueReference="89" value="0.7" description="Current setpoint filter 1 denominator damping" />
+  <Parameter name="Param.ClosedLoopControl_Filter.p1660_I_set_filt_1_fn_num" valueReference="90" unit="Hz" value="1999" description="Current setpoint filter 1 numerator natural frequency" />
+  <Parameter name="Param.ClosedLoopControl_Filter.p1661_I_set_filt_1_D_num" valueReference="91" value="0.7" description="Current setpoint filter 1 numerator damping" />
+  <Parameter name="Param.ClosedLoopControl_Filter.p1663_I_set_filt_2_fn_den" valueReference="92" unit="Hz" value="1999" description="Current setpoint filter 2 denominator natural frequency" />
+  <Parameter name="Param.ClosedLoopControl_Filter.p1664_I_set_filt_2_D_den" valueReference="93" value="0.7" description="Current setpoint filter 2 denominator damping" />
+  <Parameter name="Param.ClosedLoopControl_Filter.p1665_I_set_filt_2_fn_num" valueReference="94" unit="Hz" value="1999" description="Current setpoint filter 2 numerator natural frequency" />
+  <Parameter name="Param.ClosedLoopControl_Filter.p1666_I_set_filt_2_D_num" valueReference="95" value="0.7" description="Current setpoint filter 2 numerator damping" />
+  
+  <Parameter name="Param.ReferenceValues.p2000_n_ref" valueReference="96" unit="1/min" value="7300" description="Reference speed" />
+  <Parameter name="Param.ReferenceValues.p2003_M_ref" valueReference="97" unit="Nm" value="4.6" description="Reference torque" />
+  
+  <Parameter name="Param.Communication.p2048_IF1_PZD_t_samp" valueReference="98" unit="ms" value="4" description="IF1 PROFIdrive PZD sampling time" />
+  
+  <Parameter name="Param.SafetyIntegrated.p9852_SI_Stop_1_t_del_MM" valueReference="99" unit="ms" value="0" description="SI Safe Stop 1 delay time (Motor Module)" />
+  <Parameter name="Param.SafetyIntegrated.p60022_Ps_tel_sel" valueReference="100" value="0" description="PROFIsafe telegram selection" />
+  
+  <Parameter name="Var.InternalLoad.InertiaMotor" valueReference="101" unit="kgm^2" value="0.05" description="Inertia of motor and brake" />
+  <Parameter name="Var.InternalLoad.InertiaLoad" valueReference="102" unit="kgm^2" value="0.08" description="Inertia of the load" />
+  <Parameter name="Var.InternalLoad.InertiaRatio" valueReference="103" value="1" description="Inertia ratio to define InertiaMotor (alternative)" />
+  <Parameter name="Var.InternalLoad.GearBoxRatio" valueReference="104" value="1" description="Gear box ratio" />
+  <Parameter name="Var.InternalLoad.Damping" valueReference="105" value="0.99" description="Damping (modal)" />
+  <Parameter name="Var.InternalLoad.TorsionalStiffness" valueReference="106" unit="Nm/rad" value="2000" description="Torsional Stiffness" />
+  <Parameter name="Var.InternalLoad.AbsorberFrequency" valueReference="107" unit="Hz" value="0" description="Tilger frequency of two mass oszilator [Hz]" />
+  <Parameter name="Var.InternalLoad.BaseLoad_linear" valueReference="108" unit="Nm" value="0" description="Base load [Nm] for lineare characteristic" />
+  <Parameter name="Var.InternalLoad.BaseLoad_square" valueReference="109" unit="Nm" value="0" description="Base load [Nm] for square characteristic" />
+  <Parameter name="Var.InternalLoad.maxLoadSpeed" valueReference="110" unit="1/min" value="2000" description="Max. load speed [1/min]" />
+  <Parameter name="Var.InternalLoad.negFixedStop" valueReference="111" value="-0.5" description="negative postion in revolutions for fixed stop" />
+  <Parameter name="Var.InternalLoad.posFixedStop" valueReference="112" value="0.5" description="positive postion in revolutions for fixed stop" />
+  <Parameter name="Var.InternalLoad.SampleTime_M_Load_ext" valueReference="113" unit="ms" value="1" description="FMU co-simulation time [ms]" />
+  <Parameter name="Var.CurrentSetPointFilter1.Active" valueReference="114" value="0" description="0 .. Filter 1 inactive, 1 .. Filter 1 inactive" />
+  <Parameter name="Var.CurrentSetPointFilter1.BlockingFrequency" valueReference="115" unit="Hz" value="500" description="Blocking frequency f_sp [Hz] of filter 1" />
+  <Parameter name="Var.CurrentSetPointFilter1.Bandwidth" valueReference="116" unit="Hz" value="500" description="Bandwidth f_bb [Hz] of filter 1" />
+  <Parameter name="Var.CurrentSetPointFilter1.NotchDepth" valueReference="117" value="-20" description="Notch depth K [dB] of filter 1" />
+  <Parameter name="Var.CurrentSetPointFilter1.ReductionAbs" valueReference="118" value="-20" description="Reduction Abs [dB] of filter 1" />
+  <Parameter name="Var.CurrentSetPointFilter2.Active" valueReference="119" value="0" description="0 .. Filter 2 inactive, 1 .. Filter 2 inactive" />
+  <Parameter name="Var.CurrentSetPointFilter2.BlockingFrequency" valueReference="120" unit="Hz" value="500" description="Blocking frequency f_sp [Hz] of filter 2" />
+  <Parameter name="Var.CurrentSetPointFilter2.Bandwidth" valueReference="121" unit="Hz" value="500" description="Bandwidth f_bb [Hz] of filter 2" />
+  <Parameter name="Var.CurrentSetPointFilter2.NotchDepth" valueReference="122" value="-20" description="Notch depth K [dB] of filter 2" />
+  <Parameter name="Var.CurrentSetPointFilter2.ReductionAbs" valueReference="123" value="-20" description="Reduction Abs [dB] of filter 2" />
+  <Parameter name="Var.InternalSupply.PreChargeDuration" valueReference="124" unit="s" value="0.05" description="Estimated precharge duration [s]" />
+</FmuParameters>

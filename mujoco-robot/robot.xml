@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/85840f7e28597ff8a78cd1f1/w/051b7d735b748b64fbe9a06c/e/a0379cd5eeefbe5c8ebb69f7 -->
+<mujoco model="pinball_robot">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+  <option>
+    <flag contact="disable"/>
+  </option>
+  <default>
+    <default class="robot">
+      <joint frictionloss="0" armature="0.005"/>
+      <position kp="25" dampratio="1"/>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" friction="0 0 0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom contype="0" conaffinity="0" friction="0 0 0" group="3"/>
+      </default>
+    </default>
+  </default>
+  <worldbody>
+    <!-- Link foot -->
+    <body name="foot" pos="0 0 0.053" quat="1 0 0 0" childclass="robot">
+      <inertial pos="-0.0847276 0.0456752 0.0429429" mass="2.0405" fullinertia="0.00131146 0.00419757 0.00403801 -3.546e-09 0.000132014 9.38904e-06"/>
+      <!-- Part foot -->
+      <geom type="mesh" class="visual" pos="-0.0142582 0.0456752 0.0410819" quat="1 0 0 0" mesh="foot" material="foot_material"/>
+      <geom type="mesh" class="collision" pos="-0.0142582 0.0456752 0.0410819" quat="1 0 0 0" mesh="foot" material="foot_material"/>
+      <!-- Part servo_simple -->
+      <geom type="mesh" class="visual" pos="-0.0142582 0.0456752 0.0410819" quat="0.707107 -0 -0 0.707107" mesh="servo_simple" material="servo_simple_material"/>
+      <geom type="mesh" class="collision" pos="-0.0142582 0.0456752 0.0410819" quat="0.707107 -0 -0 0.707107" mesh="servo_simple" material="servo_simple_material"/>
+      <!-- Link rail -->
+      <body name="rail" pos="0.0157418 0.0456752 0.0410819" quat="0.498976 0.501022 0.498976 0.501022">
+        <!-- Joint from foot to rail -->
+        <joint axis="0 0 1" name="servo" type="hinge" damping="0.3"/>
+        <inertial pos="0 0 0" mass="1e-09" fullinertia="1e-09 1e-09 1e-09 0 0 0"/>
+        <!-- Part rail -->
+        <geom type="mesh" class="visual" pos="0.5 0.0205 0.0035" quat="0.270598 -0.653281 -0.653281 -0.270598" mesh="rail" material="rail_material"/>
+        <geom type="mesh" class="collision" pos="0.5 0.0205 0.0035" quat="0.270598 -0.653281 -0.653281 -0.270598" mesh="rail" material="rail_material"/>
+        <!-- Part part_1 -->
+        <geom type="mesh" class="visual" pos="0 0 0.0005" quat="0.5 -0.5 -0.5 -0.5" mesh="part_1" material="part_1_material"/>
+        <geom type="mesh" class="collision" pos="0 0 0.0005" quat="0.5 -0.5 -0.5 -0.5" mesh="part_1" material="part_1_material"/>
+        <!-- Part stopphpuise -->
+        <geom type="mesh" class="visual" pos="0.4995 0.0205 0.0035" quat="0.5 -0.5 0.5 0.5" mesh="stopphpuise" material="stopphpuise_material"/>
+        <geom type="mesh" class="collision" pos="0.4995 0.0205 0.0035" quat="0.5 -0.5 0.5 0.5" mesh="stopphpuise" material="stopphpuise_material"/>
+        <!-- Part part_1_2 -->
+        <geom type="mesh" class="visual" pos="-0 -0 0.0005" quat="0.5 -0.5 -0.5 -0.5" mesh="part_1__2" material="part_1__2_material"/>
+        <geom type="mesh" class="collision" pos="-0 -0 0.0005" quat="0.5 -0.5 -0.5 -0.5" mesh="part_1__2" material="part_1__2_material"/>
+        <!-- Part housing -->
+        <geom type="mesh" class="visual" pos="-0.4727 0.02025 0.00325" quat="0.5 -0.5 -0.5 -0.5" mesh="housing" material="housing_material"/>
+        <geom type="mesh" class="collision" pos="-0.4727 0.02025 0.00325" quat="0.5 -0.5 -0.5 -0.5" mesh="housing" material="housing_material"/>
+        <!-- Part camera -->
+        <geom type="mesh" class="visual" pos="-0.505 0.0489478 0.0165" quat="0.5 -0.5 0.5 0.5" mesh="camera" material="camera_material"/>
+        <geom type="mesh" class="collision" pos="-0.505 0.0489478 0.0165" quat="0.5 -0.5 0.5 0.5" mesh="camera" material="camera_material"/>
+        <!-- Part snsmountv3 -->
+        <geom type="mesh" class="visual" pos="-0.473 0.0205 0.0035" quat="0.5 -0.5 -0.5 -0.5" mesh="snsmountv3" material="snsmountv3_material"/>
+        <geom type="mesh" class="collision" pos="-0.473 0.0205 0.0035" quat="0.5 -0.5 -0.5 -0.5" mesh="snsmountv3" material="snsmountv3_material"/>
+        <!-- Link golf -->
+        <body name="golf" pos="0 0.0357028 -0.00958148" quat="0.529592 0.468543 -0.529592 -0.468543">
+          <!-- Joint from rail to golf -->
+          <joint axis="0 0 1" name="slide" type="slide" limited="true" range="-0.47 0.47" damping="0.05"/>
+          <inertial pos="-0.0144961 0.0144961 2e-12" mass="0.0504673" fullinertia="8.90237e-06 8.90237e-06 8.90203e-06 -3.4e-10 0 -0"/>
+          <!-- Part golf -->
+          <geom type="mesh" class="visual" pos="-0.0144957 0.0144957 0" quat="0.5 -0.5 -0.5 -0.5" mesh="golf" material="golf_material"/>
+          <geom type="mesh" class="collision" pos="-0.0144957 0.0144957 0" quat="0.5 -0.5 -0.5 -0.5" mesh="golf" material="golf_material"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <asset>
+    <mesh file="golf.stl"/>
+    <mesh file="camera.stl"/>
+    <mesh file="foot.stl"/>
+    <mesh file="servo_simple.stl"/>
+    <mesh file="housing.stl"/>
+    <mesh file="snsmountv3.stl"/>
+    <mesh file="part_1__2.stl"/>
+    <mesh file="rail.stl"/>
+    <mesh file="stopphpuise.stl"/>
+    <mesh file="part_1.stl"/>
+    <material name="foot_material" rgba="0.615686 0.811765 0.929412 1"/>
+    <material name="servo_simple_material" rgba="0.4 0.4 0.4 1"/>
+    <material name="rail_material" rgba="0.647059 0.647059 0.647059 1"/>
+    <material name="part_1_material" rgba="0.615686 0.811765 0.929412 1"/>
+    <material name="stopphpuise_material" rgba="0.615686 0.811765 0.929412 1"/>
+    <material name="part_1__2_material" rgba="0.615686 0.811765 0.929412 1"/>
+    <material name="housing_material" rgba="0.615686 0.811765 0.929412 1"/>
+    <material name="camera_material" rgba="0.34902 0.376471 0.4 1"/>
+    <material name="snsmountv3_material" rgba="0.615686 0.811765 0.929412 1"/>
+    <material name="golf_material" rgba="0.917647 0.917647 0.917647 1"/>
+  </asset>
+  <actuator>
+    <!-- 
+    <velocity class="robot" name="servo_actuator" joint="servo" kv="2" forcelimited="true" forcerange="-4 4"/>
+    -->
+    <position class="robot" name="servo_actuator" joint="servo" forcelimited="true" forcerange="-4 4"/>
+  </actuator>
+  <equality/>
+</mujoco>

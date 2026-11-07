@@ -1,0 +1,23 @@
+<mujoco>
+    <option gravity="0 0 -9.81"/>
+    <worldbody>
+        <!-- Lighting and floor -->
+        <light pos="0 0 5" dir="0 0 -1"/>
+        <geom type="plane" size="5 5 0.1" rgba=".9 .9 .9 1"/>
+
+        <!-- Seesaw Base -->
+        <body pos="0 0 1">
+            <!-- The Seesaw -->
+            <body pos="0 0 0">
+                <joint type="hinge" axis="0 1 0" range="-45 45" limited="true"/>
+                <geom type="box" size="2 0.2 0.05" rgba="0.8 0.2 0.2 1" friction="1 0.005 0.0001"/>
+            </body>
+        </body>
+
+        <!-- The Rolling Ball -->
+        <body pos="1 0 1.2">
+            <joint type="free"/>
+            <geom type="sphere" size="0.1" rgba="0.2 0.2 0.8 1" mass="0.5"/>
+        </body>
+    </worldbody>
+</mujoco>
