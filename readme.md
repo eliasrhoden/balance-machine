@@ -1,0 +1,48 @@
+# Balance machine
+
+This repo contains the PLC Code and Simulation for a balance machine.
+
+## Simulation
+
+The most important part of this repo is the simulation.
+
+The ball balance is done in mujoco, a physics simulator maintained by Google Deepmind. This is achieved by converting the CAD Assembly to the mujoco file format, which can be found in the `mujoco-robot` directory.
+
+This makes it possible to prototype in python and interact directly with mujoco through its python library. This was how the control architecture was developed.
+
+For the PLC Code, a custom C# application was developed that interacts with PLCSimAdv and mujoco. This is in the `simulation` directory
+
+The servo dynamics and control-signals is simulated by the Simenes DriveSim Designer through an FMU.
+
+![Simulation application](docs/pinball.drawio.png)
+
+### Running the python simulation
+
+You will need python, I've been using `3.13.0`.
+
+```shell
+pip install mujoco
+cd python
+python mujoco_sim.py
+```
+
+### Running the PLC simulation
+
+You will need the toolchain for C# and follow the instructions for the PLCSimAdv API [https://support.industry.siemens.com](https://support.industry.siemens.com/cs/document/109997789/s7-plcsim-advanced-function-manual-api?dti=0&lc=en-SE)
+
+1. Get the FMU's from Siemens [https://www.siemens.com/en-us/products/digital-drivetrain/](https://www.siemens.com/en-us/products/digital-drivetrain/drivesim-designer/)
+2. Copy `Siemens.Simatic.Simulation.Runtime.Api.x64.dll` from your TIA Install to the `simulation folder`.
+3. Download the TIA project to PLCSimAdv 8.1
+4. Go into the `simulation` directory and run `dotnet build`
+5. Run `.\bin\Debug\net48\sim-balance.exe`
+
+## Control architecture
+
+The ball position is controlled by a PID controller that outputs the servo angle, this is used for a proportional position controller for the servo position, the velcoity setpoint is then sent to the drive that runs the velocity control of the servo.
+
+![ctrl-arch](docs/ctrl.drawio.png)
+
+The architecutre is the same as a LQI controller, and that's how the initial gains were choosen. See `python\control_gains.ipynb` for more details regarding control design.
+
+The trajectory generation is mainly to guarantee that the ball and servo stays within their dynamic limits, i.e. max acceleration, max velocity and software limits.
+
