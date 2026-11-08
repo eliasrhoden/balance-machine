@@ -23,3 +23,5 @@ obj/
 *.cache
 
 simulation/simotion FMU/DriveSim_Designer_CODE_v2202/
+
+*.bkp
