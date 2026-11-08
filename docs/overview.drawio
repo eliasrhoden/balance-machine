@@ -1,0 +1,98 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="moPEr0zze7_dE0kQ_BX2">
+    <mxGraphModel dx="2054" dy="1201" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-12" edge="1" parent="1" source="RcQyC4yNxIuwFZsJACh3-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="RcQyC4yNxIuwFZsJACh3-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-13" connectable="0" parent="RcQyC4yNxIuwFZsJACh3-12" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Board position" vertex="1">
+          <mxGeometry relative="1" x="0.0545" y="4" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="S210&amp;nbsp;&lt;div&gt;Servo&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="380" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-9" edge="1" parent="1" source="RcQyC4yNxIuwFZsJACh3-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" target="RcQyC4yNxIuwFZsJACh3-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-10" connectable="0" parent="RcQyC4yNxIuwFZsJACh3-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Profidrive Telegram 105" vertex="1">
+          <mxGeometry relative="1" x="-0.29" y="-3" as="geometry">
+            <mxPoint x="9" y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="S7-1200 G2&lt;br&gt;PLC" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-5" edge="1" parent="1" source="RcQyC4yNxIuwFZsJACh3-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="RcQyC4yNxIuwFZsJACh3-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-6" connectable="0" parent="RcQyC4yNxIuwFZsJACh3-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="UART" vertex="1">
+          <mxGeometry relative="1" x="0.0667" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="TF Luna Lidar&lt;div&gt;distance sensor&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="80" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-7" edge="1" parent="1" source="RcQyC4yNxIuwFZsJACh3-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" target="RcQyC4yNxIuwFZsJACh3-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-8" connectable="0" parent="RcQyC4yNxIuwFZsJACh3-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="TCP" vertex="1">
+          <mxGeometry relative="1" x="-0.4333" y="-2" as="geometry">
+            <mxPoint x="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Raspberry Pico&lt;br&gt;Ethernet" vertex="1">
+          <mxGeometry height="60" width="120" x="80" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-14" edge="1" parent="1" source="RcQyC4yNxIuwFZsJACh3-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="RcQyC4yNxIuwFZsJACh3-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-15" connectable="0" parent="RcQyC4yNxIuwFZsJACh3-14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Ball position" vertex="1">
+          <mxGeometry relative="1" x="0.1" y="1" as="geometry">
+            <mxPoint x="9" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-11" parent="1" style="whiteSpace=wrap;html=1;" value="Ball and balance board" vertex="1">
+          <mxGeometry height="60" width="120" x="380" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-24" connectable="0" parent="1" style="group;rotation=-15;" value="" vertex="1">
+          <mxGeometry height="140" width="520" x="110" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-23" parent="RcQyC4yNxIuwFZsJACh3-24" style="triangle;whiteSpace=wrap;html=1;rotation=75;" value="" vertex="1">
+          <mxGeometry height="80" width="60" x="240" y="69" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-17" parent="RcQyC4yNxIuwFZsJACh3-24" style="rounded=0;whiteSpace=wrap;html=1;rotation=-15;" value="" vertex="1">
+          <mxGeometry height="10" width="520" x="4" y="79" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-18" parent="RcQyC4yNxIuwFZsJACh3-24" style="rounded=0;whiteSpace=wrap;html=1;rotation=-15;" value="Distance sensor" vertex="1">
+          <mxGeometry height="50" width="70" x="4" y="89" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-19" parent="RcQyC4yNxIuwFZsJACh3-24" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=-15;" value="" vertex="1">
+          <mxGeometry height="60" width="60" x="321" y="-5" as="geometry" />
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-20" edge="1" parent="RcQyC4yNxIuwFZsJACh3-24" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="213" y="10" as="sourcePoint" />
+            <mxPoint x="338" y="-23" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-21" connectable="0" parent="RcQyC4yNxIuwFZsJACh3-20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=-15;" value="x" vertex="1">
+          <mxGeometry relative="1" x="0.4" y="4" as="geometry">
+            <mxPoint y="-6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcQyC4yNxIuwFZsJACh3-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Servo" vertex="1">
+          <mxGeometry height="80" width="80" x="350" y="990" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
