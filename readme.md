@@ -1,6 +1,34 @@
 # Balance machine
 
-This repo contains the PLC Code and Simulation for a balance machine.
+This repo contains the PLC Code and Simulation for a ball balance machine. 
+
+![](docs/imgs/PinballAssemb%20v13.png)
+
+![](docs/imgs/cad.png)
+
+The main hardware used are:
+* Siemens S7-1200 G2 PLC
+* Siemens S210 servo
+* TF-Luna LiDAR distance sensor
+* RP2350-ETH Microcontroller
+
+![](docs/overview-Page-1.drawio.png)
+
+
+## Control architecture
+
+Ball position is $x$ and servo/board angle is $\theta$
+
+
+The ball position is controlled by a PID controller that outputs the servo angle, this is used for a proportional position controller for the servo position, the velcoity setpoint is then sent to the drive that runs the velocity control of the servo.
+
+![ctrl-arch](docs/ctrl.drawio.png)
+
+The architecutre is the same as a LQI controller, and that's how the initial gains were choosen. See `python\control_gains.ipynb` for more details regarding control design.
+
+The trajectory generation is mainly to guarantee that the ball and servo stays within their dynamic limits, i.e. max acceleration, max velocity and software limits.
+
+
 
 ## Simulation
 
@@ -36,13 +64,14 @@ You will need the toolchain for C# and follow the instructions for the PLCSimAdv
 4. Go into the `simulation` directory and run `dotnet build`
 5. Run `.\bin\Debug\net48\sim-balance.exe`
 
-## Control architecture
 
-The ball position is controlled by a PID controller that outputs the servo angle, this is used for a proportional position controller for the servo position, the velcoity setpoint is then sent to the drive that runs the velocity control of the servo.
+## RP2350 Firmware
 
-![ctrl-arch](docs/ctrl.drawio.png)
+The RP2350 acts as a middelayer between the distance sensor and PLC. Its micro-python code is located in the `rp2350-firmware` folder.
 
-The architecutre is the same as a LQI controller, and that's how the initial gains were choosen. See `python\control_gains.ipynb` for more details regarding control design.
+For more info about the RP2350, see [https://www.waveshare.com/wiki/RP2350-ETH](https://www.waveshare.com/wiki/RP2350-ETH)
 
-The trajectory generation is mainly to guarantee that the ball and servo stays within their dynamic limits, i.e. max acceleration, max velocity and software limits.
+The distance sensor communicates with the RP2350 through UART, where the position value then is transmitted to the PLC through standard TCP.
+
+A fun fact, using the TCP adapter option in PLCSimAdv, its possible to test the TCP communication in simulation.
 
