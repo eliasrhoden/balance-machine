@@ -2,9 +2,7 @@
 
 This repo contains the PLC Code and Simulation for a ball balance machine. 
 
-![](docs/imgs/PinballAssemb%20v13.png)
-
-![](docs/imgs/cad.png)
+![](docs/imgs/cad4.png)
 
 The main hardware used are:
 * Siemens S7-1200 G2 PLC
@@ -17,8 +15,9 @@ The main hardware used are:
 
 ## Control architecture
 
-Ball position is $x$ and servo/board angle is $\theta$
+Ball position is $x$ and servo/board angle is $\theta$, the frame of reference is defined as
 
+![](docs/imgs/reference.png)
 
 The ball position is controlled by a PID controller that outputs the servo angle, this is used for a proportional position controller for the servo position, the velcoity setpoint is then sent to the drive that runs the velocity control of the servo.
 
