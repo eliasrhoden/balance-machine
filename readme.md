@@ -6,7 +6,9 @@ This repo contains the PLC Code and Simulation for a ball balance machine.
 
 ![](docs/imgs/real_machine2.jpg)
 
-![](docs/videos/real-balance.mp4)
+<video src="docs/videos/real-balance.mp4" controls width="600"></video>
+
+[Download the real machine video](docs/videos/real-balance.mp4)
 
 The main hardware used are:
 * Siemens S7-1200 G2 PLC
@@ -47,7 +49,9 @@ The servo dynamics and control-signals is simulated by the Simenes DriveSim Desi
 
 ![Simulation application](docs/pinball.drawio.png)
 
-[Watch the simulation video](docs/videos/sim-demo.mp4)
+<video src="docs/videos/sim-demo.mp4" controls width="600"></video>
+
+[Download the simulation video](docs/videos/sim-demo.mp4)
 
 ### Running the python simulation
 
