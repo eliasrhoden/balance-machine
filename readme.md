@@ -6,7 +6,7 @@ This repo contains the PLC Code and Simulation for a ball balance machine.
 
 ![](docs/imgs/real_machine2.jpg)
 
-[Watch the real machine video](docs/videos/real-balance.mp4)
+![](docs/videos/real-balance.mp4)
 
 The main hardware used are:
 * Siemens S7-1200 G2 PLC
