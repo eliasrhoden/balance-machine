@@ -23,7 +23,7 @@ Ball position is $x$ and servo/board angle is $\theta$. The frame of reference i
 
 ![](docs/imgs/reference.png)
 
-The ball position is controlled by a PID controller that outputs the servo angle. This is used by a proportional position controller for the servo position. The velocity setpoint is then sent to the drive that runs the velocity control of the servo. (I'm sure it would be possible to use the Dynamic Servo Control to improve this)
+The ball position is controlled by a PID controller that outputs the servo angle. This is used by a proportional position controller for the servo position. The velocity setpoint is then sent to the drive that runs the velocity control of the servo. (I'm sure it would be possible to use Dynamic Servo Control to improve this.)
 
 ![ctrl-arch](docs/ctrl.drawio.png)
 
@@ -42,7 +42,11 @@ This makes it possible to prototype in Python and interact directly with MuJoCo 
 
 For the PLC code, a custom C# application was developed that interacts with PLCSimAdv and MuJoCo. This is in the `simulation` directory.
 
-The servo dynamics and control signals are simulated by Siemens DriveSim Designer through an FMU.
+The servo dynamics and control signals are simulated by Siemens DriveSim Designer through an FMU. If you want to run this yourself, you will have to ask Siemens for the FMU.
+
+One cool aspect is that, since the simulation works through the PROFIdrive telegram, everything on the PLC side does not notice that it's a simulation. Therefore, you can use the commissioning panel for the technology object to jog the axis like you would on the real system.
+
+As it is right now, there are no *simulation* bits that need to be set; the same PLC code runs in the simulator and the real system. The only thing I didn't simulate is the TCP communication between the PLC and RP2350-ETH. It would be possible, though; in fact, I did test the TCP code by connecting the real RP2350-ETH to PLCSimAdv.
 
 ![Simulation application](docs/pinball.drawio.png)
 
@@ -50,7 +54,7 @@ https://github.com/user-attachments/assets/7bfbd1fe-b75a-4847-a7e6-ed2d5c6ac8c3
 
 ### Running the Python simulation
 
-You will need Python, I've been using `3.13.0`.
+You will need Python; I've been using `3.13.0`.
 
 ```shell
 pip install numpy
@@ -80,4 +84,3 @@ For more info about the RP2350, see [https://www.waveshare.com/wiki/RP2350-ETH](
 The distance sensor communicates with the RP2350 through UART, where the position value then is transmitted to the PLC through standard TCP.
 
 A fun fact: using the TCP adapter option in PLCSimAdv, it's possible to test the TCP communication in simulation.
-
