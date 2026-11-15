@@ -4,6 +4,10 @@ This repo contains the PLC Code and Simulation for a ball balance machine.
 
 ![](docs/imgs/cad4.png)
 
+![](docs/imgs/real_machine2.jpg)
+
+[Watch the real machine video](docs/videos/real_balance_vid.mp4)
+
 The main hardware used are:
 * Siemens S7-1200 G2 PLC
 * Siemens S210 servo
@@ -43,11 +47,15 @@ The servo dynamics and control-signals is simulated by the Simenes DriveSim Desi
 
 ![Simulation application](docs/pinball.drawio.png)
 
+[Watch the simulation video](docs/videos/sim-demo.mp4)
+
 ### Running the python simulation
 
 You will need python, I've been using `3.13.0`.
 
 ```shell
+pip install numpy
+pip install matplotlib
 pip install mujoco
 cd python
 python mujoco_sim.py
