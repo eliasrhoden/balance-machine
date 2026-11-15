@@ -6,7 +6,7 @@ This repo contains the PLC Code and Simulation for a ball balance machine.
 
 ![](docs/imgs/real_machine2.jpg)
 
-<video src="https://github.com/eliasrhoden/balance-machine/blob/main/docs/videos/real-balance.mp4" controls width="600"></video>
+https://github.com/user-attachments/assets/cc02a76b-089c-4ac8-9cfb-12c7500d12f7
 
 The main hardware used are:
 * Siemens S7-1200 G2 PLC
@@ -32,7 +32,6 @@ The architecutre is the same as a LQI controller, and that's how the initial gai
 The trajectory generation is mainly to guarantee that the ball and servo stays within their dynamic limits, i.e. max acceleration, max velocity and software limits.
 
 
-
 ## Simulation
 
 The most important part of this repo is the simulation.
@@ -47,9 +46,7 @@ The servo dynamics and control-signals is simulated by the Simenes DriveSim Desi
 
 ![Simulation application](docs/pinball.drawio.png)
 
-<video src="docs/videos/sim-demo.mp4" controls width="600"></video>
-
-[Download the simulation video](docs/videos/sim-demo.mp4)
+https://github.com/user-attachments/assets/7bfbd1fe-b75a-4847-a7e6-ed2d5c6ac8c3
 
 ### Running the python simulation
 
