@@ -36,7 +36,7 @@ The trajectory generation is mainly to guarantee that the ball and servo stay wi
 
 The most important part of this repo is the simulation.
 
-The ball balance is simulated in MuJoCo, a physics simulator maintained by Google DeepMind. This is achieved by converting the CAD assembly to the MuJoCo file format, which can be found in the `mujoco-robot` directory.
+The ball balance is simulated in [MuJoCo](https://github.com/google-deepmind/mujoco), a physics simulator maintained by Google DeepMind. This is achieved by converting the CAD assembly to the MuJoCo file format, which can be found in the `mujoco-robot` directory.
 
 This makes it possible to prototype in Python and interact directly with MuJoCo through its Python library. This was how the control architecture was developed.
 
